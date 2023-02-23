@@ -1,0 +1,30 @@
+﻿<Window
+    x:Class="Labb_2_databaser_Saraebba.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Labb_2_databaser_Saraebba"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:Labb_2_databaser_Saraebba.ViewModels"
+    xmlns:views="clr-namespace:Labb_2_databaser_Saraebba.Views"
+    Title="MainWindow"
+    Width="880"
+    Height="580"
+    FontSize="14"
+    mc:Ignorable="d">
+    <Grid Margin="20">
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:MenyViewModel}">
+                <views:Meny />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:BokhandelslagerViewModel}">
+                <views:Bokhandelslager />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:Författare_BöckerViewModel}">
+                <views:Författare_Böcker />
+            </DataTemplate>
+        </Grid.Resources>
+
+        <ContentControl Content="{Binding CurrentViewModel}" />
+    </Grid>
+</Window>
